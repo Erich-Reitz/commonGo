@@ -1,0 +1,52 @@
+package advent
+
+import (
+	"os"
+	"strconv"
+	"strings"
+)
+
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
+func readFileAsString(filepath string) string {
+	dat, err := os.ReadFile(filepath)
+	check(err)
+	return string(dat)
+}
+
+func MinOf(vars ...int) int {
+	min := vars[0]
+
+	for _, i := range vars {
+		if min > i {
+			min = i
+		}
+	}
+
+	return min
+}
+
+func MaxOf(vars ...int) int {
+	min := vars[0]
+
+	for _, i := range vars {
+		if min < i {
+			min = i
+		}
+	}
+
+	return min
+}
+
+func splitTwoIntsByString(line, splitBy string) (int, int) {
+	splitString := strings.Split(line, splitBy)
+	num1, err := strconv.Atoi(splitString[0])
+	check(err)
+	num2, err := strconv.Atoi(splitString[1])
+	check(err)
+	return num1, num2
+}
