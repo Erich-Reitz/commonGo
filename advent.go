@@ -12,7 +12,7 @@ func check(e error) {
 	}
 }
 
-func readFileAsString(filepath string) string {
+func ReadFileAsString(filepath string) string {
 	dat, err := os.ReadFile(filepath)
 	check(err)
 	return string(dat)
@@ -42,7 +42,7 @@ func MaxOf(vars ...int) int {
 	return min
 }
 
-func splitTwoIntsByString(line, splitBy string) (int, int) {
+func SplitTwoIntsByString(line, splitBy string) (int, int) {
 	splitString := strings.Split(line, splitBy)
 	num1, err := strconv.Atoi(splitString[0])
 	check(err)
