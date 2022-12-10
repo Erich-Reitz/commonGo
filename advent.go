@@ -18,30 +18,6 @@ func ReadFileAsString(filepath string) string {
 	return string(dat)
 }
 
-func MinOf(vars ...int) int {
-	min := vars[0]
-
-	for _, i := range vars {
-		if min > i {
-			min = i
-		}
-	}
-
-	return min
-}
-
-func MaxOf(vars ...int) int {
-	min := vars[0]
-
-	for _, i := range vars {
-		if min < i {
-			min = i
-		}
-	}
-
-	return min
-}
-
 func SplitTwoIntsByString(line, splitBy string) (int, int) {
 	splitString := strings.Split(line, splitBy)
 	num1, err := strconv.Atoi(splitString[0])
