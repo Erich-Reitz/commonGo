@@ -26,7 +26,7 @@ func MaxOf(vars ...int) int {
 }
 
 func AbsInt(x int) int {
-	return absDiffInt(x, 0)
+	return AbsDiffInt(x, 0)
  }
  
  func AbsDiffInt(x, y int) int {
